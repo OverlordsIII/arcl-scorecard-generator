@@ -1,1 +1,1 @@
-# arcl-scorecard-generator
+# ARCL Scorecard Generator
