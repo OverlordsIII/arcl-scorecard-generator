@@ -1,5 +1,4 @@
-from tabulate import tabulate
-from parse_scorecard import parse_batting, parse_bowling
+from utils import get_batting_performances, get_bowling_performances, print_formatted_performances
 
 
 def main():
@@ -21,28 +20,10 @@ def main():
         "Vishank": "216641"
     }
 
-    batting_perfs = []
-    bowling_perfs = []
+    batting_perfs = get_batting_performances(batting_scorecard)
+    bowling_perfs = get_bowling_performances(bowling_scorecard)
 
-    for key, value in batting_scorecard.items():
-        parsed = parse_batting(value).as_array(key)
-        batting_perfs.append(parsed)
-
-    print("\nBatting\n")
-
-    print(tabulate(batting_perfs, headers=[
-          "Name", "Runs", "Balls", "4s", "6s", "SR"]))
-
-    print("-"*50)
-
-    for key, value in bowling_scorecard.items():
-        parsed = parse_bowling(value).as_array(key)
-        bowling_perfs.append(parsed)
-
-    print("\nBowling\n")
-
-    print(tabulate(bowling_perfs, headers=[
-          "Name", "Overs", "No Balls", "Wides", "Runs", "Wickets"]))
+    print_formatted_performances(batting_perfs, bowling_perfs)
 
 
 if __name__ == "__main__":
