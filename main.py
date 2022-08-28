@@ -1,7 +1,9 @@
+from ast import arg
 from distutils.command.build_scripts import first_line_re
 from parse_scorecard import parse_batting, parse_bowling
 from tabulate import tabulate
 import json
+import argparse
 
 
 def get_batting_performances(perf_info: dict[str, str]):
@@ -53,8 +55,8 @@ def load_from_json(file_path):
     return (first_innings_batting, first_innings_bowling), (second_innings_batting, second_innings_bowling)
 
 
-def main():
-    first, second = load_from_json("./example.json")
+def main(path):
+    first, second = load_from_json(path)
 
     print("First Innings: \n")
     print_formatted_performances(*first)
@@ -63,4 +65,14 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "-p", "--path", help="Path to the scorecard file. Defaults to `./example.json`")
+
+    args = parser.parse_args()
+
+    path = args.path if args.path else "./example.json"
+
+    main(path)
