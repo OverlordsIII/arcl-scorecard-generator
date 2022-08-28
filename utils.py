@@ -1,6 +1,3 @@
-from parse_scorecard import parse_batting, parse_bowling
-
-
 def batting_map(char): return 0 if char in ['.', 'o'] else int(char)
 
 

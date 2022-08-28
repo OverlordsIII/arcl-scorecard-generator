@@ -1,4 +1,4 @@
-from utils import parse_batting, parse_bowling
+from parse_scorecard import parse_batting, parse_bowling
 from tabulate import tabulate
 
 
