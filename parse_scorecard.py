@@ -25,10 +25,10 @@ class BowlingWrapper(object):
         self.remaining_balls = balls % 6
 
     def as_array(self, name):
-        return [f'{name, self.overs}.{self.remaining_balls}', self.no_balls, self.wides, self.wickets]
+        return [name, f'{self.overs}.{self.remaining_balls}', self.no_balls, self.wides, self.runs, self.wickets]
 
 
-def parse_batting(s, ball_by_ball=False):
+def parse_batting(s):
     balls = 0
     runs = 0
     fours = 0
@@ -44,15 +44,13 @@ def parse_batting(s, ball_by_ball=False):
 
         balls += 1
         runs += value
-        if ball_by_ball:
-            print(f"{runs} ({balls})")
 
     sr = round(100 * (runs / balls), 2)
 
     return BattingWrapper(runs, balls, fours, sixes, sr)
 
 
-def parse_bowling(s, ball_by_ball=False):
+def parse_bowling(s):
     balls = 0
     runs = 0
 
