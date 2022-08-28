@@ -1,4 +1,36 @@
-from utils import get_batting_performances, get_bowling_performances, print_formatted_performances
+from utils import parse_batting, parse_bowling
+from tabulate import tabulate
+
+
+def get_batting_performances(perf_info: dict[str, str]):
+    ret = []
+
+    for key, value in perf_info.items():
+        parsed = parse_batting(value).as_array(key)
+        ret.append(parsed)
+
+    return ret
+
+
+def get_bowling_performances(perf_info: dict[str, str]):
+    ret = []
+
+    for key, value in perf_info.items():
+        parsed = parse_bowling(value).as_array(key)
+        ret.append(parsed)
+
+    return ret
+
+
+def print_formatted_performances(batting_perfs, bowling_perfs):
+    batting_columns = ["Name", "Runs", "Balls", "4s", "6s", "SR"]
+    bowling_columns = ["Name", "Overs", "No Balls", "Wides", "Runs", "Wickets"]
+
+    print("\nBatting\n")
+    print(tabulate(batting_perfs, headers=batting_columns))
+    print("-"*50)
+    print("\nBowling\n")
+    print(tabulate(bowling_perfs, headers=bowling_columns))
 
 
 def main():
