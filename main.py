@@ -2,8 +2,12 @@ from ast import arg
 from distutils.command.build_scripts import first_line_re
 from parse_scorecard import parse_batting, parse_bowling
 from tabulate import tabulate
+from pg import DB
+from db import DatabaseHandler
 import json
 import argparse
+
+
 
 
 def get_batting_performances(perf_info: dict[str, str]):
@@ -54,9 +58,19 @@ def load_from_json(file_path):
 
     return (first_innings_batting, first_innings_bowling), (second_innings_batting, second_innings_bowling)
 
+def add_perfs_to_db(db, batting_performances, bowling_performance):
+    for perf in batting_performances:
+         db.add_batting_performance(*perf)
+    for perf in bowling_performance:
+        db.add_bowling_performance(*perf)
 
-def main(path):
+
+def main(path, db):
+    db.setup_tables()
     first, second = load_from_json(path)
+
+    add_perfs_to_db(db, *first)
+    add_perfs_to_db(db, *second)
 
     print("First Innings: \n")
     print_formatted_performances(*first)
@@ -75,4 +89,6 @@ if __name__ == "__main__":
 
     path = args.path if args.path else "./example.json"
 
-    main(path)
+    db = DatabaseHandler(dbname="scorecard")
+
+    main(path, db)

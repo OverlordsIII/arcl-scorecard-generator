@@ -1,37 +1,37 @@
 {
     "first_innings": {
         "batting": {
-            "Aran": "1010000004o",
-            "Neal": "11...1121.11111...11..111.2411..1.6641o",
-            "Advay": ".2411.14.1.211211241.4..1441..2114111.12111",
-            "Anirudh": "146"
+            "Aran Pandey": "1010000004o",
+            "Neal Parekh": "11...1121.11111...11..111.2411..1.6641o",
+            "Advay Patil": ".2411.14.1.211211241.4..1441..2114111.12111",
+            "Anirudh Sridharan": "146"
         },
         "bowling": {
-            "Anirudh": "1w11.1...14o.",
-            "Thiru": "..w.w..1n241211",
-            "Harshith": ".1.14.1121114411.w.",
-            "Abhiram": "111.211..1....w1.1.o11n146",
-            "Krish": "2411w.w411141.",
-            "Shubh": "121..1124111",
-            "Vishank": "216641"
+            "Anirudh Talluri": "1w11.1...14o.",
+            "Thiruchelvam Arasu": "..w.w..1n241211",
+            "Harshith Gande": ".1.14.1121114411.w.",
+            "Abhiram Purohit": "111.211..1....w1.1.o11n146",
+            "Krish Verma": "2411w.w411141.",
+            "Shubh Dwivedi": "121..1124111",
+            "Vishank Bansal": "216641"
         }
     },
     "second_innings": {
         "batting": {
-            "Vishank": "..1.12..2o",
-            "Adit": ".o",
-            "Abhi": ".3.1o",
-            "Shubh": "..111.4..1",
-            "Krish": "146o",
-            "Anirudh": "111.1...4....2..111....2..4...11",
-            "Harshith": "..1114211211...1",
-            "Thiru": "o"
+            "Vishank Bansal": "..1.12..2o",
+            "Adit Agarwal": ".o",
+            "Abhiram Purohit": ".3.1o",
+            "Shubh Dwivedi": "..111.4..1",
+            "Krish Verma": "146o",
+            "Anirudh Talluri": "111.1...4....2..111....2..4...11",
+            "Harshith Gande": "..1114211211...1",
+            "Thiruchelvam Arasu": "o"
         },
         "bowling": {
-            "Anirudh": "..n1o.311.4w..n12..1nwn41...o.",
-            "Advay": "w.1.1o.111o..w14......1..1",
-            "Neal": "2..2o..11.w..21.n2..",
-            "Ronak": "1146ow1121w11w.14w...1"
+            "Anirudh Sridharan": "..n1o.311.4w..n12..1nwn41...o.",
+            "Advay Patil": "w.1.1o.111o..w14......1..1",
+            "Neal Parekh": "2..2o..11.w..21.n2..",
+            "Ronak Kothari": "1146ow1121w11w.14w...1"
         }
     }
 }
